@@ -4,27 +4,27 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern")
 const Choices = require("inquirer/lib/objects/choices");
-const { finished } = require("stream");
-const { ENGINE_METHOD_RAND } = require("constants");
+// const { finished } = require("stream");
+// const { ENGINE_METHOD_RAND } = require("constants");
 
 const employeeArr = [];
 
 function start() {
     inquirer.prompt([
         {
-            message: "What name?",
+            message: "What is your name?",
             name: "name"
         },
         {
-            message: "What Id?",
+            message: "What is your Id?",
             name: "id"
         },
         {
-            message: "email",
+            message: "What is your email?",
             name: "email"
         },
         {
-            message: "office",
+            message: "What is your office number?",
             name: "officeNumber"
         },
         
@@ -61,19 +61,19 @@ function menu(){
 function addEngineer(){
     inquirer.prompt([
         {
-            message: "What name?",
+            message: "What is the engineer's name?",
             name: "name"
         },
         {
-            message: "What Id?",
+            message: "What is the engineer's Id?",
             name: "id"
         },
         {
-            message: "What email",
+            message: "What is the engineer's email addres?",
             name: "email"
         },
         {
-            message: "What Github username?",
+            message: "What is the engineer's Github username?",
             name: "githubUser"
         },
     ]).then(response => {
@@ -87,19 +87,19 @@ function addEngineer(){
 function addIntern(){
     inquirer.prompt([
         {
-            message: "What name?",
+            message: "What is the intern's name?",
             name: "name"
         },
         {
-            message: "What Id?",
+            message: "What is the intern's Id?",
             name: "id"
         },
         {
-            message: "What email",
+            message: "What is the intern's email address?",
             name: "email"
         },
         {
-            message: "What school?",
+            message: "What is the intern's school?",
             name: "school"
         },
     ]).then(response => {
@@ -143,7 +143,6 @@ function htmlCreator(array){
           </div>
         </div>`
         }
-        // if engineer the template added differs
         if(array[i].getRole() == "Engineer"){
             template += `
             <div class="col">
@@ -154,7 +153,7 @@ function htmlCreator(array){
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${array[i].id}</li>
                 <li class="list-group-item">Email: <a href="mailto:${array[i].email}">${array[i].email}</a></li>
-                <li class="list-group-item">Github: ${array[i].githubUser}</li>
+                <li class="list-group-item">Github: <a href="github.com/${array[i].githubUser}">${array[i].githubUser}</a></li>
               </ul>
             </div>
           </div>
