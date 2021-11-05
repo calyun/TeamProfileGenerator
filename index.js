@@ -103,7 +103,7 @@ function addIntern(){
     ]).then(response => {
         const newInt = new Intern(response.name, response.id, response.email, response.school);
         employeeArr.push(newInt);
-        console.log(employeeArr);
+        // console.log(employeeArr);
         menu();
     })
 }
