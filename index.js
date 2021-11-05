@@ -4,8 +4,6 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern")
 const Choices = require("inquirer/lib/objects/choices");
-// const { finished } = require("stream");
-// const { ENGINE_METHOD_RAND } = require("constants");
 
 const employeeArr = [];
 
@@ -31,7 +29,7 @@ function start() {
     ]).then(response => {
         const newMgr = new Manager(response.name, response.id, response.email, response.officeNumber);
         employeeArr.push(newMgr)
-        console.log(employeeArr);
+        // console.log(employeeArr);
         menu();
     })
 }
@@ -79,7 +77,7 @@ function addEngineer(){
     ]).then(response => {
         const newEng = new Engineer(response.name, response.id, response.email, response.githubUser);
         employeeArr.push(newEng);
-        console.log(employeeArr);
+        // console.log(employeeArr);
         menu();
     })
 }
